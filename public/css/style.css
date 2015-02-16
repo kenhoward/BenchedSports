@@ -6,3 +6,7 @@ html, body {
 #benched {
 	height: 1.5em;
 }
+
+.verticalLine {
+    border-left: thick solid #ff0000;
+}
