@@ -3,32 +3,40 @@ var app = angular.module('benchedSports', ['ngRoute']);
 app.config(function($routeProvider) {
 	$routeProvider
 	.when('/home', {
-		templateUrl: '/templates/home/home-view.html',
+		templateUrl: '/templates/home-view.html',
 		controller: 'homeCtrl'
 	})
 	.when('/nfl', {
-		templateUrl: '/templates/nfl-view.html',
+		templateUrl: '/templates/nfl-home.html',
 		controller: 'nflCtrl'
 	})	
 	.when('/mlb', {
-		templateUrl: '/templates/mlb-view.html',
+		templateUrl: '/templates/mlb-home.html',
 		controller: 'mlbCtrl'
 	})	
 	.when('/nba', {
-		templateUrl: '/templates/nba-view.html',
+		templateUrl: '/templates/nba-home.html',
 		controller: 'nbaCtrl'
 	})	
 	.when('/soccer', {
-		templateUrl: '/templates/soccer-view.html',
+		templateUrl: '/templates/soccer-home.html',
 		controller: 'soccerCtrl'
+	})
+	.when('/tennis', {
+		templateUrl: '/templates/tennis-home.html',
+		controller: 'tennisCtrl'
 	})	
 	.when('/cricket', {
-		templateUrl: '/templates/cricket-view.html',
+		templateUrl: '/templates/cricket-home.html',
 		controller: 'cricketCtrl'
 	})	
 	.when('/running', {
-		templateUrl: '/templates/running-view.html',
+		templateUrl: '/templates/running-home.html',
 		controller: 'runningCtrl'
+	})
+	.when('/login', {
+		templateUrl: '/templates/login-home.html',
+		controller: 'loginCtrl'
 	})
 	.otherwise('/home');
 })

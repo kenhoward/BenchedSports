@@ -7,10 +7,10 @@ var app = express ();
 var port = 9001
 var mongoUri = 'mongodb://localhost:27017/benchedSports'
 
-app.use(bodyParse.json());
+app.use(bodyParser.json());
 
-mongoose.connect(mongoUri);
-mongoose.connection.once('open', function() {
+Mongoose.connect(mongoUri);
+Mongoose.connection.once('open', function() {
 	console.log('Connected to Server: ' + mongoUri);
 });
 
