@@ -15,6 +15,17 @@ var mongoUri = 'mongodb://localhost:27017/benchedSports'
 
 // MIDDLEWARE ====================================================================================================
 
+passport.serializeUser(function(user, done){
+	done(null, user);
+});
+
+passport.deserializeUser(function(obj, done){
+	userCtrl.getUser(obj.id).then(function(results){
+		done(null, results);
+	}, function(err){
+		done(err, null);
+	})
+});
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
