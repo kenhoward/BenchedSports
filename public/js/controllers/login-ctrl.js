@@ -1,8 +1,8 @@
 var app = angular.module('benchedSports');
 
-app.controller('loginCtrl', function($scope, loginService) {
+app.controller('loginCtrl', function($scope, $window) {
 	// $scope.testLogin = 'Login ctrl works'
 	$scope.loginGoogle = function() {
-		loginService.google($scope)
+		$window.location.href = '/auth/google'
 	}
 })

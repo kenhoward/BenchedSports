@@ -1,4 +1,4 @@
-{{testLogin}}
+<!-- {{testLogin}} -->
 
 <div class="container">
 
@@ -10,23 +10,8 @@
 		</div>
 		<div class="text-center">
 			<button><i class="fa fa-google" ng-click='loginGoogle()'> google</i></button>	
-			<button><i class="fa fa-facebook-official"> facebook</i></button>	
-			<button><i class="fa fa-twitter-square"> twitter</i></button>	
-		</div>
-
-		<div class="row text-center" ng-if="state == 'register'">
-			<button class="btn btn-primary btn-xs" ng-click="clickRegister()">Register</button>
-			<div>Need to <a ng-click="changeState('login')">login instead?</a></div>
-		</div>
-		<div class="row text-center" ng-if="state == 'login'">
-			<button class="btn btn-primary btn-xs" ng-click="clickLogin()">Login</button>
-			<div>Need to <a ng-click="changeState('register')">register instead?</a></div>
-		</div>
-		<div class="row bg-warning" ng-if="loginError">
-			Login failed.
-		</div>
-		<div class="row bg-warning" ng-if="regError">
-			Registration failed.
+			<button><i class="fa fa-facebook"> facebook</i></button>	
+			<button><i class="fa fa-twitter"> twitter</i></button>	
 		</div>
 	</div>
 </section>
