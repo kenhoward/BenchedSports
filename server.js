@@ -16,15 +16,20 @@ var mongoUri = 'mongodb://localhost:27017/benchedSports'
 // MIDDLEWARE ====================================================================================================
 
 passport.serializeUser(function(user, done){
+	// console.log('serialize', user)
 	done(null, user);
 });
 
 passport.deserializeUser(function(obj, done){
-	userCtrl.getUser(obj.id).then(function(results){
-		done(null, results);
-	}, function(err){
-		done(err, null);
-	})
+	// console.log(obj)
+	done(null, obj)
+	// userCtrl.getUser(obj.googleId).then(function(results){
+	// 	console.log('deserialize', results)
+	// 	done(null, results);
+	// }, function(err){
+	// 	console.log(err)
+	// 	done(null, err);
+	// })
 });
 
 app.use(express.static(__dirname + '/public'));
@@ -40,8 +45,10 @@ passport.use(new GoogleStrategy ({
 },
 function(accessToken, refreshToken, profile, done) {
 	userCtrl.createOrUpdate(profile).then(function(user){
+		// console.log(user);
 		done(null, user);
 	}, function(err){
+		console.log(err);
 		done(err, null);
 	});
 	
@@ -56,7 +63,7 @@ app.get('/auth/google/callback',
 	passport.authenticate('google', { failureRedirect: '/login' }),
 	function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect('/');
+    res.redirect('/'); // CONSIDER REDIRECTING SOMEWHERE ELSE AFTER LOGIN
 });
 
 app.get('/auth/logout', function(req, res) {
@@ -65,6 +72,7 @@ app.get('/auth/logout', function(req, res) {
 });
 
 app.get('/me', function(req, res) {
+	// console.log(req.user)
 	res.send(req.user)
 })
 
