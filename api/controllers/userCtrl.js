@@ -6,11 +6,11 @@ module.exports = {
 		console.log(googleProfile);
 		var deferred = q.defer();
 		User.findOneAndUpdate({ googleId: googleProfile.id }, {
-			//match up field from schema to googleProfile
+			//match up field from schema and console log to googleProfile
 			name: googleProfile.displayName,
 			googleId: googleProfile.id,
 			picture: googleProfile._json.picture,
-		}, {upsert: true}, function(err, doc) { // upsert options pulls ONE doc from collection
+		}, {upsert: true}, function(err, doc) { // upsert options pulls ONE 'doc' from collection
 			if (!err) {
 				deferred.resolve(doc);
 			} else {
