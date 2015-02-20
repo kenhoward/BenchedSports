@@ -5,8 +5,12 @@ var passport = require('passport')
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var session = require('express-session');
 var userCtrl = require('./api/controllers/userCtrl')
+var posts = require('./api/models/postSchema')
 
-var app = express ();
+var app = express();
+
+// instance of the router
+// var adminRouter = express.Router()
 
 var port = 9001
 var mongoUri = 'mongodb://localhost:27017/benchedSports'
@@ -76,15 +80,28 @@ app.get('/me', function(req, res) {
 	res.send(req.user)
 })
 
-
 // ENDPOINTS =====================================================================================================
+// A way to post data
 
-var isAuthed = function(req, res, next) {
-	if (!req.isAuthenticated()) {
-		return res.status(403).end()
-	}
-	return next();
-}
+// query
+app.get('/api/post', function(req, res) {
+	var sport = req.query.sport;
+	posts.find({ sport: sport}).exec().then(function(response) {
+		res.json(response); // sends it back to the service after the request was made
+	})
+})
+
+app.post('/api/post', function(req, res) {
+	var newPost = new posts(req.body);
+	newPost.save(function(err, post) {
+		if (err) {
+			return res.status(500).send(err)
+		} else {
+			res.status(200).end()
+		}
+	})
+})
+
 // app.post('/')
 
 // CONNECTIONS ===================================================================================================
