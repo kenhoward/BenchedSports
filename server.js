@@ -38,14 +38,14 @@ passport.deserializeUser(function(obj, done){
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
-app.use(session({ secret: 'adkflj#sdB3NC43Ddk#afjk5P0R75dkj#' }));
+app.use(session({ secret: '' }));
 app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use(new GoogleStrategy ({
-	clientID: '782472847243-0tgb80rljoamjpem0e8gcqdk9fqu0ktb.apps.googleusercontent.com',
-	clientSecret: 'oLRIVApDrt6qgYjIg2EsniZq',
-	callbackURL: 'http://localhost:9001/auth/google/callback'
+	clientID: '',
+	clientSecret: '',
+	callbackURL: ''
 },
 function(accessToken, refreshToken, profile, done) {
 	userCtrl.createOrUpdate(profile).then(function(user){
