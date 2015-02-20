@@ -79,7 +79,13 @@ app.get('/me', function(req, res) {
 
 // ENDPOINTS =====================================================================================================
 
-// app.put('/api/user', userCtrl.putUser);
+var isAuthed = function(req, res, next) {
+	if (!req.isAuthenticated()) {
+		return res.status(403).end()
+	}
+	return next();
+}
+// app.post('/')
 
 // CONNECTIONS ===================================================================================================
 
