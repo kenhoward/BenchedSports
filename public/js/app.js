@@ -8,31 +8,31 @@ app.config(function($routeProvider) {
 	})
 	.when('/nfl', {
 		templateUrl: '/templates/nfl-home.html',
-		controller: 'nflCtrl'
+		controller: 'sportCtrl'
 	})	
 	.when('/mlb', {
 		templateUrl: '/templates/mlb-home.html',
-		controller: 'mlbCtrl'
+		controller: 'sportCtrl'
 	})	
 	.when('/nba', {
 		templateUrl: '/templates/nba-home.html',
-		controller: 'nbaCtrl'
+		controller: 'sportCtrl'
 	})	
 	.when('/soccer', {
 		templateUrl: '/templates/soccer-home.html',
-		controller: 'soccerCtrl'
+		controller: 'sportCtrl'
 	})
 	.when('/tennis', {
 		templateUrl: '/templates/tennis-home.html',
-		controller: 'tennisCtrl'
+		controller: 'sportCtrl'
 	})	
 	.when('/cricket', {
 		templateUrl: '/templates/cricket-home.html',
-		controller: 'cricketCtrl'
+		controller: 'sportCtrl'
 	})	
 	.when('/running', {
 		templateUrl: '/templates/running-home.html',
-		controller: 'runningCtrl'
+		controller: 'sportCtrl'
 	})
 	.when('/login', {
 		templateUrl: '/templates/login-home.html',
