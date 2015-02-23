@@ -6,4 +6,5 @@ app.controller('sportCtrl', function($scope, postService) {
 		$scope.post.user = $scope.user._id
 		postService.submitPost($scope.post)
 	}
+
 })
