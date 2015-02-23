@@ -38,14 +38,14 @@ passport.deserializeUser(function(obj, done){
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
-app.use(session({ secret: '' }));
+app.use(session({ secret: 'adkflj#sdB3NC43Ddk#afjk5P0R75dkj#' }));
 app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use(new GoogleStrategy ({
-	clientID: '',
-	clientSecret: '',
-	callbackURL: ''
+	clientID: '782472847243-0tgb80rljoamjpem0e8gcqdk9fqu0ktb.apps.googleusercontent.com',
+	clientSecret: 'oLRIVApDrt6qgYjIg2EsniZq',
+	callbackURL: 'http://localhost:9001/auth/google/callback'
 },
 function(accessToken, refreshToken, profile, done) {
 	userCtrl.createOrUpdate(profile).then(function(user){
@@ -92,6 +92,7 @@ app.get('/api/post', function(req, res) {
 })
 
 app.post('/api/post', function(req, res) {
+	// debugger; // node-debug server.js in terminal
 	var newPost = new posts(req.body);
 	newPost.save(function(err, post) {
 		if (err) {

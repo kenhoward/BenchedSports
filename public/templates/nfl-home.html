@@ -1,7 +1,21 @@
-{{testNFL}}
+<!-- {{testNFL}} -->
+<div>
+	<div class="container">
 
-<div class="container">
+		<div class="text-center">
+			<h1>NFL Home</h1>
+			<hr class="star-primary">
+		</div>
 
-<h1>NFL Home View</h1>
 
+
+		<form ng-show='user' id="contact_form" method="POST" enctype="multipart/form-data" class='text-center'> <!-- Consider using action="#" -->
+			<div class="row">
+				<label for="message">Your Comment:</label><br />
+				<textarea id="message" class="input" name="message" rows="7" cols="50"></textarea><br />
+			</div>
+			<input id="submit_button" type="submit" value="submit" />
+		</form>	
+
+	</div>
 </div>
