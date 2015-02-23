@@ -2,8 +2,12 @@
 	<div class="container">
 
 		<div class="text-center">
-			<h1>NFL Home</h1>
+			<h1>{{title}}</h1>
 			<hr class="star-primary">
+		<div class="view" ng-repeat='post in viewPosts'>
+			{{post.title}}
+		</div>
+
 
 	<div class="notification">
 		<p id='notification' ng-show='!user'>Login to write your post!</p>

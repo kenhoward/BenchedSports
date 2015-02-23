@@ -1,13 +1,13 @@
 var app = angular.module('benchedSports');
 
-app.service('postService', function($http, $q) {
+app.service('postService', function($http, $q, $location) {
 
 	this.getPosts = function(sport) {
+		console.log(sport)
 		var deferred = $q.defer();
 		$http ({
 			method: 'GET',
 			url: '/api/post?sport=' + sport,
-			// params: sport
 		}).then(function(res){
 			console.log(res.data);
 			deferred.resolve(res.data)
@@ -20,14 +20,7 @@ app.service('postService', function($http, $q) {
 	this.submitPost = function(data) {
 		
 		console.log(data)
-		/*
-		data = {
-			title: 'Some title',
-			body: 'Diz mah body',
-			sport: 'NFL',
-			user: '98235ru98ausd98gu9284UYG'
-		}
-		*/
+
 		var deferred = $q.defer();
 		$http ({
 			method: 'POST',

@@ -15,8 +15,6 @@ var app = express();
 var port = 9001
 var mongoUri = 'mongodb://localhost:27017/benchedSports'
 
-// CONTROLLERS ===================================================================================================
-
 // MIDDLEWARE ====================================================================================================
 
 passport.serializeUser(function(user, done){
