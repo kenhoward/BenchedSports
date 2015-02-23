@@ -1,5 +1,17 @@
-<div class="container">
+<div>
+	<div class="container">
 
-<h1>MLB Home View</h1>
+		<div class="text-center">
+			<h1>MLB Home</h1>
+			<hr class="star-primary">
 
+	<div class="notification">
+		<p id='notification' ng-show='!user'>Login to write your post!</p>
+		<button ng-show='!user' ng-click='toLogin()'>Click to Login</button>
+	</div>
+
+	<button ng-show='user' ng-click='createPost()'>Create Your Post</button>
+
+		</div>
+	</div>
 </div>

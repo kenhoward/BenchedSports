@@ -38,5 +38,10 @@ app.config(function($routeProvider) {
 		templateUrl: '/templates/login-home.html',
 		controller: 'loginCtrl'
 	})
+	.when('/post-item', {
+		templateUrl: '/templates/submit-post-view.html',
+		controller: 'sportCtrl'
+	})
+
 	.otherwise('/home');
 })

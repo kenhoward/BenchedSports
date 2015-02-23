@@ -7,7 +7,6 @@ app.controller('mainCtrl', function($scope, authService) {
 				$scope.user = data;
 			})
 	}
-
 	// updateUser();
 
 	$scope.getUser = function() {

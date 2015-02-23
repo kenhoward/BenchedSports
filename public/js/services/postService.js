@@ -6,7 +6,8 @@ app.service('postService', function($http, $q) {
 		var deferred = $q.defer();
 		$http ({
 			method: 'GET',
-			url: '/api/post?sport=' + sport
+			url: '/api/post?sport=' + sport,
+			// params: sport
 		}).then(function(res){
 			console.log(res.data);
 			deferred.resolve(res.data)
@@ -17,6 +18,16 @@ app.service('postService', function($http, $q) {
 	}
 
 	this.submitPost = function(data) {
+		
+		console.log(data)
+		/*
+		data = {
+			title: 'Some title',
+			body: 'Diz mah body',
+			sport: 'NFL',
+			user: '98235ru98ausd98gu9284UYG'
+		}
+		*/
 		var deferred = $q.defer();
 		$http ({
 			method: 'POST',
@@ -26,6 +37,7 @@ app.service('postService', function($http, $q) {
 			console.log(res);
 			deferred.resolve(res)
 		}, function(err) {
+			console.log(err)
 			deferred.reject(err);
 		})
 		return deferred.promise;

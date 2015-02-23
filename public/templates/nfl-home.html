@@ -1,21 +1,17 @@
-{{testNFL}}
 <div>
 	<div class="container">
 
 		<div class="text-center">
 			<h1>NFL Home</h1>
 			<hr class="star-primary">
+
+	<div class="notification">
+		<p id='notification' ng-show='!user'>Login to write your post!</p>
+		<button ng-show='!user' ng-click='toLogin()'>Click to Login</button>
+	</div>
+
+	<button ng-show='user' ng-click='createPost()'>Create Your Post</button>
+
 		</div>
-
-
-
-		<form ng-show='user' id="contact_form" method="POST" enctype="multipart/form-data" class='text-center'> <!-- Consider using action="#" -->
-			<div class="row">
-				<label for="message">Your Comment:</label><br />
-				<textarea id="message" class="input" name="message" rows="7" cols="50"></textarea><br />
-			</div>
-			<input id="submit_button" type="submit" value="submit" />
-		</form>	
-
 	</div>
 </div>
