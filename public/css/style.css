@@ -21,6 +21,10 @@ html, body {
 
 }
 
+#inputTitle {
+    width: 30em;
+}
+
 /*.fade {
     position: absolute;
     top: 0;

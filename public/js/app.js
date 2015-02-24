@@ -7,7 +7,7 @@ app.config(function($routeProvider) {
 		controller: 'homeCtrl'
 	})
 	.when('/posts/:sport', {
-		templateUrl: '/templates/nfl-home.html',
+		templateUrl: '/templates/sport-home.html',
 		controller: 'sportCtrl',
 		resolve: {
 			sportsData: function(postService, $route) {
