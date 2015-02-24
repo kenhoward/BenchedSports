@@ -12,15 +12,14 @@ app.service('postService', function($http, $q, $location) {
 			console.log(res.data);
 			deferred.resolve(res.data)
 	}, function(err){
+		console.log(err)
 			deferred.reject(err);
 	})
 		return deferred.promise;
 	}
 
-	this.submitPost = function(data) {
-		
-		console.log(data)
-
+	this.submitPost = function(data) {	
+		console.log('service', data)
 		var deferred = $q.defer();
 		$http ({
 			method: 'POST',

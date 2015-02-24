@@ -65,7 +65,7 @@ app.get('/auth/google/callback',
 	passport.authenticate('google', { failureRedirect: '/login' }),
 	function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect('/'); // CONSIDER REDIRECTING SOMEWHERE ELSE AFTER LOGIN
+    res.redirect('/'); // CONSIDER REDIRECTING SOMEWHERE ELSE AFTER LOGIN - Where they were beofre
 });
 
 app.get('/auth/logout', function(req, res) {
@@ -83,8 +83,8 @@ app.get('/me', function(req, res) {
 
 // query
 app.get('/api/post', function(req, res) {
-	var sport = req.query.sport;
-	posts.find({ sport: sport}).exec().then(function(response) {
+	var sport = req.query.sport; // query will require the '?' when doing my get request in my post service
+	posts.find({ sport: sport }).populate('user').exec().then(function(response) { // .populate('user') <-- mongoose magic
 		res.json(response); // sends it back to the service after the request was made
 	})
 })

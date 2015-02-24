@@ -5,7 +5,10 @@
 			<h1>{{title}}</h1>
 			<hr class="star-primary">
 		<div class="view" ng-repeat='post in viewPosts'>
-			{{post.title}}
+			{{post.title}}<br>
+			{{post.body}}<br>
+			{{post.user.name}}
+			<img id='commentPics' ng-src='{{post.user.picture}}' /><hr>
 		</div>
 
 

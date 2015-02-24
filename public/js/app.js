@@ -11,11 +11,23 @@ app.config(function($routeProvider) {
 		controller: 'sportCtrl',
 		resolve: {
 			sportsData: function(postService, $route) {
-				// console.log($location.path())
 				return postService.getPosts($route.current.params.sport);
 			}
 		}
 	})	
+	.when('/login', {
+		templateUrl: '/templates/login-home.html',
+		controller: 'loginCtrl'
+	})
+	.when('/post-item', {
+		templateUrl: '/templates/submit-post-view.html',
+		controller: 'postCtrl'
+	})
+	.otherwise('/home');
+})
+
+
+// previously taking this route
 	// .when('/mlb', {
 	// 	templateUrl: '/templates/mlb-home.html',
 	// 	controller: 'sportCtrl'
@@ -40,13 +52,3 @@ app.config(function($routeProvider) {
 	// 	templateUrl: '/templates/running-home.html',
 	// 	controller: 'sportCtrl'
 	// })
-	.when('/login', {
-		templateUrl: '/templates/login-home.html',
-		controller: 'loginCtrl'
-	})
-	.when('/post-item', {
-		templateUrl: '/templates/submit-post-view.html',
-		controller: 'sportCtrl'
-	})
-	.otherwise('/home');
-})

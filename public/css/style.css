@@ -15,7 +15,13 @@ html, body {
 	color: red;
 }
 
-.fade {
+#commentPics {
+    border-radius: 50%;
+    height: 2em;
+
+}
+
+/*.fade {
     position: absolute;
     top: 0;
     left: 0;
@@ -42,4 +48,5 @@ html, body {
 }
 .fade.ng-leave-active {
     opacity: 0;
-}
+}*/
+
