@@ -26,11 +26,10 @@ html, body {
 }
 
 #commentBody {
-    color: red;
+    /*color: red;*/
 }
 
 #commentTitle {
-    color: blue;
     font-weight: bold;
 }
 
@@ -49,32 +48,67 @@ html, body {
 #benchedTitle {
     color: white;
 }
-/*.fade {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    opacity: 1;
+
+/*#textArea { 
+  font-family: Consolas, monospace;
+  white-space: pre;
+  word-wrap: normal;
+  padding: 0.1em 0.3em;
+  border: solid thin;
+  overflow: auto;
+  width: 25em;
+  width: 60ch;
 }
 
-.fade.ng-enter,
-.fade.ng-leave {
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    transition: all 1s ease;
+body { 
+  //font-family: 'Source Sans Pro', sans-serif!important;
+  font-family: 'Roboto Slab', serif!important;
+  font-weight : 400!important;
+  background-color : #F1F1F1!important;
 }
-.fade.ng-enter {
-    opacity: 0;
+h1,h2,h3 { 
+  //font-family: 'Source Sans Pro', sans-serif!important;
+  font-family: 'Roboto Slab', serif!important;
 }
-.fade.ng-enter-active {
-    opacity: 1;
+
+
+.ta-editor {
+  min-height: 300px;
+  height: auto;
+  overflow: auto;
+  font-family: inherit;
+  font-size: 100%;
+  box-shdaow : none!important;
 }
-.fade.ng-leave {
-    opacity: 1;
+
+.ta-toolbar .btn {
+  border-radius : 0;
+  padding : 5px;
+  min-width : 30px;
+  background-color : #fff;
+  color : #333;
 }
-.fade.ng-leave-active {
-    opacity: 0;
+[text-angular] { 
+  position : relative;
+}
+.ta-toolbar { 
+  position : absolute ;
+  top : 0;
+  right : 0;
+}
+@media all and (max-width: 699px) {
+  .ta-toolbar { position : absolute; }
+  .ta-editor { padding-top : 30px; }
+}
+
+@media all and (max-width: 250px) {
+  .ta-toolbar { display : none; }
+}
+.ta-toolbar .btn-group { 
+  margin : 0!important;
+  //box-shadow : 0 1px 3px rgba(0,0,0,0.2);
+}
+.ta-editor {
+  border :1px solid #EEE;
+  border-raidus : 3px!important;
 }*/
-

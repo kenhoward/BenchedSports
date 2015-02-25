@@ -3,22 +3,22 @@
 
 		<div class="text-center">
 			<h1>{{title}}</h1>
-			
-			<hr class="star-primary">
+			<!-- {{logo}} -->
+		<div class="notification">
+			<p id='notification' ng-show='!user'>Login to write your post!</p>
+			<button ng-show='!user' ng-click='toLogin()'>Click to Login</button>
+		</div>
+
+		<button ng-show='user' ng-click='createPost()'>Create Your Post</button>
+		<hr class="star-primary">
+
+
 		<div class="view" ng-repeat='post in viewPosts'>
 			<div id='commentTitle'>{{post.title}}</div><br>
 			<div id='commentBody'>{{post.body}}</div><br>
 			{{post.user.name}}
 			<img id='commentPics' ng-src='{{post.user.picture}}' /><hr>
 		</div>
-
-
-	<div class="notification">
-		<p id='notification' ng-show='!user'>Login to write your post!</p>
-		<button ng-show='!user' ng-click='toLogin()'>Click to Login</button>
-	</div>
-
-	<button ng-show='user' ng-click='createPost()'>Create Your Post</button>
 
 		</div>
 	</div>

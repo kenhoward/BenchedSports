@@ -15,6 +15,7 @@ app.controller('sportCtrl', function($scope, postService, sportsData, $location,
 	switch($routeParams.sport) {
 		case 'NFL': 
 			$scope.title = 'NFL Home'
+			// $scope.logo = '/images/nfl.png'
 			break;
 		case 'MLB':
 			$scope.title = 'MLB Home'
