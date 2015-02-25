@@ -25,6 +25,15 @@ html, body {
     width: 30em;
 }
 
+#commentBody {
+    color: red;
+}
+
+#commentTitle {
+    color: blue;
+    font-weight: bold;
+}
+
 /*.fade {
     position: absolute;
     top: 0;

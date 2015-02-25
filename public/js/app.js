@@ -14,7 +14,11 @@ app.config(function($routeProvider) {
 				return postService.getPosts($route.current.params.sport);
 			}
 		}
-	})	
+	})
+	// .when('/fantasy/:sport', {
+	// 	templateUrl: '/templates/sport-fantasy.html',
+	// 	controller: 'fantasySports'
+	// })
 	.when('/login', {
 		templateUrl: '/templates/login-home.html',
 		controller: 'loginCtrl'
