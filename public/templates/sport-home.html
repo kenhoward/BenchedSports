@@ -2,17 +2,61 @@
 	<div class="container">
 
 		<div class="text-center">
-			<h1>{{title}}</h1>
+			<h1>{{sportTitle}}</h1>
 			<!-- {{logo}} -->
 		<div class="notification">
 			<p id='notification' ng-show='!user'>Login to write your post!</p>
 			<!-- Good use of modal below -->
-			<a href='#/{{sport}}'><button data-toggle='modal' data-target='#loginModal' ng-show='!user' ng-click='toLogin()'>Click to Login</button></a>
+			<a href='#/{{sport}}'><button class='btn btn-primary btn-md' data-toggle='modal' data-target='#loginModal' ng-show='!user' ng-click='toLogin()'>Click to Login</button></a>
 		</div>
 
 
-		<button ng-show='user' ng-click='createPost()'>Create Your Post</button>
+<button class='btn btn-primary btn-md' data-toggle='modal' data-target='#myModal' ng-show='user'>Create Your Post</button> <!-- ****changes**** -->
 		<hr class="star-primary">
+
+
+	<div ng-controller='postCtrl' id='myModal' class='modal fade'>
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1>Submit Your Post</h1>
+				</div>
+				<div class="modal-body">
+					<form class="form"> 
+						<div class="form-group">
+							<label>Title</label> <!-- title -->
+							<input type='text' placeholder='Title of your post...' class='form-control' ng-model='title'>
+						</div>
+						<div class="form-group"> <!-- body -->
+							<div text-angular="text-angular" name="htmlcontent" ng-model="htmlcontent" ta-toolbar="[['bold','underline','italics','undo','redo', 'quote','p','pre','ul','ol', 'insertImage']]"></div>
+						</div>
+						<div class="form-group"> <!-- sport -->
+							<label>Select Sport</label>
+							<select ng-model='sport'>
+								<option value='NFL'>NFL</option>
+								<option value='MLB'>MLB</option>
+								<option value='NBA'>NBA</option>
+								<option value='Soccer'>Soccer</option>
+								<option value='Tennis'>Tennis</option>
+								<option value='Cricket'>Cricket</option>
+								<option value='Running'>Running</option>								
+							</select>
+						</div>						
+					</form>					
+				</div>
+				<div class="modal-footer"> 
+					<div class="row">
+						<div class="col-md-6">
+							<div class='btn btn-success btn-block' ng-click='submitPost()' id="submit_button" type="submit" value="submit">Submit</div>
+						</div>
+						<div class="col-md-6">
+							<div data-dismiss='modal' class='btn btn-default btn-block'>Cancel</div>
+						</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 		<div class="view" ng-repeat='post in viewPosts'>

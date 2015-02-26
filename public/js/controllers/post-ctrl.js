@@ -16,8 +16,4 @@ app.controller('postCtrl', function($scope, postService) {
 		console.log(post);
 		postService.submitPost(post)
 	}
-
-
-
-
 })

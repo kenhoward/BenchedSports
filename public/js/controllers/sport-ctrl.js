@@ -14,26 +14,26 @@ app.controller('sportCtrl', function($scope, postService, sportsData, $location,
 
 	switch($routeParams.sport) {
 		case 'NFL': 
-			$scope.title = 'NFL Home'
+			$scope.sportTitle = 'NFL Home'
 			// $scope.logo = '/images/nfl.png'
 			break;
 		case 'MLB':
-			$scope.title = 'MLB Home'
+			$scope.sportTitle = 'MLB Home'
 			break;
 		case 'NBA':
-			$scope.title = 'NBA Home'
+			$scope.sportTitle = 'NBA Home'
 			break;
 		case 'Soccer':
-			$scope.title = 'Soccer Home'
+			$scope.sportTitle = 'Soccer Home'
 			break;
 		case 'Tennis':
-			$scope.title = 'Tennis Home'
+			$scope.sportTitle = 'Tennis Home'
 			break;
 		case 'Cricket':
-			$scope.title = 'Cricket Home'
+			$scope.sportTitle = 'Cricket Home'
 			break;
 		case 'Running':
-			$scope.title = 'Running Home'
+			$scope.sportTitle = 'Running Home'
 			break;
 	}
 
