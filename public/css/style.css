@@ -31,6 +31,7 @@ html, body {
 
 #commentTitle {
     font-weight: bold;
+    font-size: 30px;
 }
 
 #followUs {
@@ -104,3 +105,9 @@ html, body {
 .ta-hidden-input {
     display: none;
 }
+
+
+/* bootswatch -  */
+
+
+
