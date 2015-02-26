@@ -12,12 +12,12 @@
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular-sanitize.min.js'></script> <!-- textAngular -->
     <script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.1.2/textAngular.min.js'></script> <!-- textAngular -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">  
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.3.7/src/textAngular.css"> <!-- textAngular -->
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.2.1/bootstrap-social.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.2.1/bootstrap-social.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
     <body>
         <div class='navBar' ng-controller='mainCtrl'>
@@ -27,6 +27,7 @@
               <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                   <span class="sr-only">Toggle navigation</span>
+                  <!-- Here is a view for mobile users -->
                 </button>
                 <a class="navbar-brand" href="#/home">
                   <img id="benched" alt="Benched Sports Logo" src="images/benched.png">
@@ -121,7 +122,7 @@
                   <button type="submit" class="btn btn-default">Submit</button>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
-                <li>
+                <li data-toggle='modal' data-target='#loginModal'>
                   <a href='#/login' ng-show='!user'>Login</a>
                   <a ng-show='user' ng-click='logout()' href='#/login'>Logout</a>
                 </li>
@@ -131,7 +132,40 @@
               </div><!-- /.navbar-collapse -->
             </div><!-- /.container -->
           </nav>
-          <div ng-view></div>
+        <div ng-view></div>
+
+        <div id='loginModal' class='modal fade'> <!-- fades into it -->
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1>Login</h1>
+              </div>
+              <div class="modal-body">
+                <form class="form"> 
+                  <div class="form-group">
+                    <label>Email</label>
+                    <input type='email' placeholder='email' class='form-control'>
+                  </div>
+                  <div class="form-group">
+                    <label>Password</label>
+                    <input type='password' placeholder='password' class='form-control'>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer"> 
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class='btn btn-success btn-block'>Submit</div>
+                  </div>
+                  <div class="col-md-6">
+                    <div data-dismiss='modal' class='btn btn-danger btn-block'>Cancel</div>
+                  </div>            
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>          
+
       </div>
     <script src='js/app.js'></script>
     <script src='js/controllers/home-ctrl.js'></script>
