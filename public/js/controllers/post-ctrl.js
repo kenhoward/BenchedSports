@@ -10,10 +10,14 @@ app.controller('postCtrl', function($scope, postService) {
 	$scope.submitPost = function() {
 		var post = {};
 		post.title = $scope.title;
-		post.body = $scope.body;
+		post.body = $scope.htmlcontent; // previously was: $scope.body
 		post.sport = $scope.sport;
 		post.user = $scope.user._id
 		console.log(post);
 		postService.submitPost(post)
 	}
+
+
+
+
 })

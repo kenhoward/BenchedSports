@@ -6,7 +6,7 @@
 			<hr class="star-primary">
 		</div>
 
-		<form ng-show='user' id="contact_form" method="POST" enctype="multipart/form-data" class='text-center'> <!-- Consider using action="#" -->
+<!-- 		<form ng-show='user' id="contact_form" method="POST" enctype="multipart/form-data" class='text-center'>
 			<div class="row">
 				<strong><em>Title: </em></strong><input id='inputTitle' type='text' ng-model='title' /><br>
 				<textarea ng-model='body' id="message" class="input" name="message" rows="15" cols="100" placeholder='What would you like to say?'></textarea><br />
@@ -23,12 +23,34 @@
 			<input ng-click='submitPost()' id="submit_button" type="submit" value="submit" />
 		</form>	
 
-	<!-- back button -->
+	
 	<nav>
 	  <ul class="pager">
-	    <li><a href="#/home">Cancel</a></li> <!-- NEED TO CHANGE THIS FROM HOME TO WHERE THEY WERE PREVIOUSLY -->
+	    <li><a href="#/home">Cancel</a></li> 
 	  </ul>
-	</nav>
+	</nav> -->
+
+
+<!-- testing -->
+
+		<form ng-show='user' id="contact_form" method="POST" enctype="multipart/form-data" class='text-center'>
+			<div class="row">
+				<strong><em>Title: </em></strong><input id='inputTitle' type='text' ng-model='title' /><br>
+			<div>
+				<div text-angular="text-angular" name="htmlcontent" ng-model="htmlcontent" ta-toolbar="[['bold','underline','italics','undo','redo', 'quote','p','pre','ul','ol', 'insertImage']]"></div>
+			</div>
+				<strong><em>Select Sport </em></strong><select ng-model='sport'>
+					<option value='NFL'>NFL</option>
+					<option value='MLB'>MLB</option>
+					<option value='NBA'>NBA</option>
+					<option value='Soccer'>Soccer</option>
+					<option value='Tennis'>Tennis</option>
+					<option value='Cricket'>Cricket</option>
+					<option value='Running'>Running</option>
+				</select><br>					
+			</div>
+			<input ng-click='submitPost()' id="submit_button" type="submit" value="submit" />
+		</form>	
 
 
 	</div>

@@ -15,7 +15,7 @@
 
 		<div class="view" ng-repeat='post in viewPosts'>
 			<div id='commentTitle'>{{post.title}}</div><br>
-			<div id='commentBody'>{{post.body}}</div><br>
+			<div id='commentBody' ng-bind-html="post.body"></div><br> <!-- previously was: <div id='commentBody'>{{post.body}}</div><br> -->
 			{{post.user.name}}
 			<img id='commentPics' ng-src='{{post.user.picture}}' /><hr>
 		</div>

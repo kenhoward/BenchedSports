@@ -1,4 +1,4 @@
-var app = angular.module('benchedSports', ['ngRoute']);
+var app = angular.module('benchedSports', ['ngRoute', 'textAngular']);
 
 app.config(function($routeProvider) {
 	$routeProvider
