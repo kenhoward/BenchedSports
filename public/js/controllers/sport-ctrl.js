@@ -2,9 +2,9 @@ var app = angular.module('benchedSports');
 
 app.controller('sportCtrl', function($scope, postService, sportsData, $location, $routeParams) {
 	
-	$scope.toLogin = function() {
-		$location.path('/login');
-	}
+	// $scope.toLogin = function() {
+	// 	$location.path('/login');
+	// }
 
 	$scope.createPost = function() {
 		$location.path('/post-item');

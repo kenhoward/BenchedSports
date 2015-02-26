@@ -19,10 +19,10 @@ app.config(function($routeProvider) {
 	// 	templateUrl: '/templates/sport-fantasy.html',
 	// 	controller: 'fantasySports'
 	// })
-	.when('/login', {
-		templateUrl: '/templates/login-home.html',
-		controller: 'loginCtrl'
-	})
+	// .when('/login', {
+	// 	templateUrl: '/templates/login-home.html',
+	// 	controller: 'loginCtrl'
+	// })
 	.when('/post-item', {
 		templateUrl: '/templates/submit-post-view.html',
 		controller: 'postCtrl'
@@ -31,6 +31,13 @@ app.config(function($routeProvider) {
 		templateUrl: '/templates/under-construction.html'
 	})
 	.otherwise('/home');
+})
+
+app.controller('loginCtrl', function($scope, $window) {
+	// $scope.testLogin = 'Login ctrl works'
+	$scope.loginGoogle = function() {
+		$window.location.href = '/auth/google'
+	}
 })
 
 

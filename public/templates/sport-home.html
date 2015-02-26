@@ -6,8 +6,10 @@
 			<!-- {{logo}} -->
 		<div class="notification">
 			<p id='notification' ng-show='!user'>Login to write your post!</p>
-			<button ng-show='!user' ng-click='toLogin()'>Click to Login</button>
+			<!-- Good use of modal below -->
+			<a href='#/{{sport}}'><button data-toggle='modal' data-target='#loginModal' ng-show='!user' ng-click='toLogin()'>Click to Login</button></a>
 		</div>
+
 
 		<button ng-show='user' ng-click='createPost()'>Create Your Post</button>
 		<hr class="star-primary">

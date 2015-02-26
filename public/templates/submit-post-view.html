@@ -6,32 +6,7 @@
 			<hr class="star-primary">
 		</div>
 
-<!-- 		<form ng-show='user' id="contact_form" method="POST" enctype="multipart/form-data" class='text-center'>
-			<div class="row">
-				<strong><em>Title: </em></strong><input id='inputTitle' type='text' ng-model='title' /><br>
-				<textarea ng-model='body' id="message" class="input" name="message" rows="15" cols="100" placeholder='What would you like to say?'></textarea><br />
-				<strong><em>Select Sport </em></strong><select ng-model='sport'>
-					<option value='NFL'>NFL</option>
-					<option value='MLB'>MLB</option>
-					<option value='NBA'>NBA</option>
-					<option value='Soccer'>Soccer</option>
-					<option value='Tennis'>Tennis</option>
-					<option value='Cricket'>Cricket</option>
-					<option value='Running'>Running</option>
-				</select><br>					
-			</div>
-			<input ng-click='submitPost()' id="submit_button" type="submit" value="submit" />
-		</form>	
-
-	
-	<nav>
-	  <ul class="pager">
-	    <li><a href="#/home">Cancel</a></li> 
-	  </ul>
-	</nav> -->
-
-
-<!-- testing -->
+<!-- textAngular -->
 
 		<form ng-show='user' id="contact_form" method="POST" enctype="multipart/form-data" class='text-center'>
 			<div class="row">
@@ -55,8 +30,35 @@
 
 	</div>
 
+
+<!-- this will be gone -->
 	<div ng-show='!user' class='text-center'>
 		<h3>You need to be logged in to create a post, please login below...</h3>
 		<button ng-click='toLogin()'>Go to Login Page</button>
 	</div>
 </div>
+
+<!-- 	previous version
+	<form ng-show='user' id="contact_form" method="POST" enctype="multipart/form-data" class='text-center'>
+			<div class="row">
+				<strong><em>Title: </em></strong><input id='inputTitle' type='text' ng-model='title' /><br>
+				<textarea ng-model='body' id="message" class="input" name="message" rows="15" cols="100" placeholder='What would you like to say?'></textarea><br />
+				<strong><em>Select Sport </em></strong><select ng-model='sport'>
+					<option value='NFL'>NFL</option>
+					<option value='MLB'>MLB</option>
+					<option value='NBA'>NBA</option>
+					<option value='Soccer'>Soccer</option>
+					<option value='Tennis'>Tennis</option>
+					<option value='Cricket'>Cricket</option>
+					<option value='Running'>Running</option>
+				</select><br>					
+			</div>
+			<input ng-click='submitPost()' id="submit_button" type="submit" value="submit" />
+		</form>	
+
+	
+	<nav>
+	  <ul class="pager">
+	    <li><a href="#/home">Cancel</a></li> 
+	  </ul>
+	</nav> -->
