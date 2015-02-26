@@ -81,7 +81,7 @@ html, body {
   position : relative;
 }
 .ta-toolbar { 
-  position : relative ; /*change*/
+  position : relative ; /*changed to get the toolbar outside of the body*/
   top : 0;
   right : 0;
 }
@@ -103,4 +103,8 @@ html, body {
 }
 .ta-hidden-input {
     display: none;
+}
+
+.under-construction {
+    
 }

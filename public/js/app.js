@@ -27,6 +27,9 @@ app.config(function($routeProvider) {
 		templateUrl: '/templates/submit-post-view.html',
 		controller: 'postCtrl'
 	})
+	.when('/under-construction', {
+		templateUrl: '/templates/under-construction.html'
+	})
 	.otherwise('/home');
 })
 
