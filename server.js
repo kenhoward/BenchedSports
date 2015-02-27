@@ -12,7 +12,7 @@ var app = express();
 // instance of the router
 // var adminRouter = express.Router()
 
-var port = 9001
+var port = 80 // previously 9001
 var mongoUri = 'mongodb://localhost:27017/benchedSports'
 
 // MIDDLEWARE ====================================================================================================
@@ -41,8 +41,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use(new GoogleStrategy ({
-	clientID: '782472847243-0tgb80rljoamjpem0e8gcqdk9fqu0ktb.apps.googleusercontent.com',
-	clientSecret: 'oLRIVApDrt6qgYjIg2EsniZq',
+	clientID: '782472847243-0tgb80rljoamjpem0e8gcqdk9fqu0ktb.apps.googleusercontent.com', // process.env.GOOGLE_CLIENT_ID
+	clientSecret: 'oLRIVApDrt6qgYjIg2EsniZq', // process.env.GOOGLE_CLIENT_SECRET
 	callbackURL: 'http://localhost:9001/auth/google/callback'
 },
 function(accessToken, refreshToken, profile, done) {
