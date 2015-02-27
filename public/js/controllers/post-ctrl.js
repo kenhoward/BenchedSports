@@ -15,5 +15,8 @@ app.controller('postCtrl', function($scope, postService) {
 		post.user = $scope.user._id
 		console.log(post);
 		postService.submitPost(post)
+		$scope.title = '';
+		$scope.htmlcontent = '';
+		$scope.sport = '';
 	}
 })

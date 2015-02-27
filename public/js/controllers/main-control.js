@@ -21,7 +21,7 @@ app.controller('mainCtrl', function($scope, authService) {
 		console.log('logout')
 		authService.logout()
 			.then(function(data){
-				// updateUser();
+				$scope.getUser();
 			})
 	}
 })

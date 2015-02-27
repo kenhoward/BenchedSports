@@ -122,8 +122,10 @@
                   <button type="submit" class="btn btn-default">Submit</button>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
-                  <li data-toggle='modal' data-target='#loginModal'>
-                    <a href='#/' ng-show='!user'>Login</a>
+                  <li data-toggle='modal' data-target='#loginModal' ng-show='!user'>
+                    <a href='#/'>Login</a>
+                  </li>
+                  <li>
                     <a ng-show='user' ng-click='logout()' href='#/'>Logout</a>
                   </li>
                   <!-- <li><a href="#/login">Sign In</a></li> 
