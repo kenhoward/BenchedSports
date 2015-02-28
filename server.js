@@ -12,7 +12,7 @@ var app = express();
 // instance of the router
 // var adminRouter = express.Router()
 
-var port = 'process.env.EXPRESS_PORT || 9001' // previously 9001
+var port = '8080' // previously 9001
 var mongoUri = 'mongodb://localhost/benchedSports'
 
 // MIDDLEWARE ====================================================================================================
