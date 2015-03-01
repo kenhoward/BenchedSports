@@ -39,30 +39,3 @@ app.controller('loginCtrl', function($scope, $window) {
 		$window.location.href = '/auth/google'
 	}
 })
-
-
-// previously taking this route
-	// .when('/mlb', {
-	// 	templateUrl: '/templates/mlb-home.html',
-	// 	controller: 'sportCtrl'
-	// })	
-	// .when('/nba', {
-	// 	templateUrl: '/templates/nba-home.html',
-	// 	controller: 'sportCtrl'
-	// })	
-	// .when('/soccer', {
-	// 	templateUrl: '/templates/soccer-home.html',
-	// 	controller: 'sportCtrl'
-	// })
-	// .when('/tennis', {
-	// 	templateUrl: '/templates/tennis-home.html',
-	// 	controller: 'sportCtrl'
-	// })	
-	// .when('/cricket', {
-	// 	templateUrl: '/templates/cricket-home.html',
-	// 	controller: 'sportCtrl'
-	// })	
-	// .when('/running', {
-	// 	templateUrl: '/templates/running-home.html',
-	// 	controller: 'sportCtrl'
-	// })

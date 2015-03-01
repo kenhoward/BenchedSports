@@ -41,8 +41,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use(new GoogleStrategy ({
-	clientID: 'process.env.GOOGLE_CLIENT_ID', // 782472847243-0tgb80rljoamjpem0e8gcqdk9fqu0ktb.apps.googleusercontent.com
-	clientSecret: 'process.env.GOOGLE_CLIENT_SECRET', // oLRIVApDrt6qgYjIg2EsniZq
+	clientID: 'process.env.GOOGLE_CLIENT_ID', 
+	clientSecret: 'process.env.GOOGLE_CLIENT_SECRET', 
 	callbackURL: 'http://localhost:9001/auth/google/callback'
 },
 function(accessToken, refreshToken, profile, done) {
@@ -100,8 +100,6 @@ app.post('/api/post', function(req, res) {
 		}
 	})
 })
-
-// app.post('/')
 
 // CONNECTIONS ===================================================================================================
 
