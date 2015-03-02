@@ -41,9 +41,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use(new GoogleStrategy ({
-	clientID: 'process.env.GOOGLE_CLIENT_ID', // 782472847243-0tgb80rljoamjpem0e8gcqdk9fqu0ktb.apps.googleusercontent.com
-	clientSecret: 'process.env.GOOGLE_CLIENT_SECRET', // oLRIVApDrt6qgYjIg2EsniZq
-	callbackURL: 'http://localhost:9001/auth/google/callback'
+	clientID: '782472847243-0tgb80rljoamjpem0e8gcqdk9fqu0ktb.apps.googleusercontent.com', 
+	clientSecret: 'oLRIVApDrt6qgYjIg2EsniZq', 
+	callbackURL: 'http://benchedsports.in:8080/auth/google/callback'
 },
 function(accessToken, refreshToken, profile, done) {
 	userCtrl.createOrUpdate(profile).then(function(user){
@@ -55,6 +55,7 @@ function(accessToken, refreshToken, profile, done) {
 	});
 	
 }));
+
 
 // AUTHENTICATION ================================================================================================
 
@@ -100,8 +101,6 @@ app.post('/api/post', function(req, res) {
 		}
 	})
 })
-
-// app.post('/')
 
 // CONNECTIONS ===================================================================================================
 
