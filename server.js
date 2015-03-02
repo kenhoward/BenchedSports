@@ -41,8 +41,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use(new GoogleStrategy ({
-	clientID: 'process.env.GOOGLE_CLIENT_ID', 
-	clientSecret: 'process.env.GOOGLE_CLIENT_SECRET', 
+	clientID: '782472847243-0tgb80rljoamjpem0e8gcqdk9fqu0ktb.apps.googleusercontent.com', 
+	clientSecret: 'oLRIVApDrt6qgYjIg2EsniZq', 
 	callbackURL: 'http://benchedsports.in:808/auth/google/callback'
 },
 function(accessToken, refreshToken, profile, done) {
