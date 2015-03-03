@@ -41,15 +41,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use(new GoogleStrategy ({
-<<<<<<< HEAD
-	clientID: '782472847243-0tgb80rljoamjpem0e8gcqdk9fqu0ktb.apps.googleusercontent.com', 
-	clientSecret: 'oLRIVApDrt6qgYjIg2EsniZq', 
-	callbackURL: 'http://benchedsports.in/auth/google/callback'
-=======
 	clientID: process.env.GOOGLE_CLIENT_ID, 
 	clientSecret: process.env.GOOGLE_CLIENT_SECRET, 
 	callbackURL: process.env.GOOGLE_CB || 'http//benchedsports.in/auth/google/callback'
->>>>>>> 4bd9af5f99d57ddcc64dcf15a95bc4952b2e9276
 },
 function(accessToken, refreshToken, profile, done) {
 	userCtrl.createOrUpdate(profile).then(function(user){
