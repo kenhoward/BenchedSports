@@ -43,7 +43,7 @@ app.use(passport.session());
 passport.use(new GoogleStrategy ({
 	clientID: '782472847243-0tgb80rljoamjpem0e8gcqdk9fqu0ktb.apps.googleusercontent.com', 
 	clientSecret: 'oLRIVApDrt6qgYjIg2EsniZq', 
-	callbackURL: 'http://benchedsports.in:8080/auth/google/callback'
+	callbackURL: 'http://benchedsports.in/auth/google/callback'
 },
 function(accessToken, refreshToken, profile, done) {
 	userCtrl.createOrUpdate(profile).then(function(user){
