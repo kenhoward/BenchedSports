@@ -15,14 +15,6 @@ app.config(function($routeProvider) {
 			}
 		}
 	})
-	// .when('/fantasy/:sport', {
-	// 	templateUrl: '/templates/sport-fantasy.html',
-	// 	controller: 'fantasySports'
-	// })
-	// .when('/login', {
-	// 	templateUrl: '/templates/login-home.html',
-	// 	controller: 'loginCtrl'
-	// })
 	.when('/post-item', {
 		templateUrl: '/templates/submit-post-view.html',
 		controller: 'postCtrl'
