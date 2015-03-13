@@ -36,7 +36,7 @@ passport.deserializeUser(function(obj, done){
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
-app.use(session({ secret: 'adkflj#sdB3NC43Ddk#afjk5P0R75dkj#' }));
+app.use(session({ secret: process.env.SECRET })); // need to add to bash profile
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -55,7 +55,6 @@ function(accessToken, refreshToken, profile, done) {
 	});
 	
 }));
-
 
 // AUTHENTICATION ================================================================================================
 
