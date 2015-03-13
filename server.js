@@ -17,6 +17,8 @@ var mongoUri = 'mongodb://localhost/benchedSports'
 
 // MIDDLEWARE ====================================================================================================
 
+console.log(process.env)
+
 passport.serializeUser(function(user, done){
 	// console.log('serialize', user)
 	done(null, user);
