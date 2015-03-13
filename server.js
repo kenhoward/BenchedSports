@@ -46,21 +46,22 @@ passport.use(new GoogleStrategy ({
 	callbackURL: process.env.GOOGLE_CB || 'http://localhost:9001/auth/google/callback'
 },
 // HAD THIS BEFORE, testing what jaredhandson/passport does
-// function(accessToken, refreshToken, profile, done) {
-// 	userCtrl.createOrUpdate(profile).then(function(user){
-// 		// console.log(user);
-// 		done(null, user);
-// 	}, function(err){
-// 		console.log(err);
-// 		done(err, null);
-// 	});
+function(accessToken, refreshToken, profile, done) {
+	userCtrl.createOrUpdate(profile).then(function(user){
+		// console.log(user);
+		done(null, user);
+	}, function(err){
+		console.log(err);
+		done(err, null);
+	});
 	
-// 	}
-	function(accessToken, refreshToken, profile, done) {
-		userCtrl.findOrCreate({ googleId: profile.id }, function (err, user) {
-			return done(err, user)
-		})
 	}
+// straight from the docs
+	// function(accessToken, refreshToken, profile, done) {
+	// 	userCtrl.findOrCreate({ googleId: profile.id }, function (err, user) {
+	// 		return done(err, user)
+	// 	})
+	// }
 ));
 
 
