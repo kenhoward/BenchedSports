@@ -43,7 +43,7 @@ app.use(passport.session());
 passport.use(new GoogleStrategy ({
 	clientID: process.env.GOOGLE_CLIENT_ID, 
 	clientSecret: process.env.GOOGLE_CLIENT_SECRET, 
-	callbackURL: process.env.GOOGLE_CB || 'http//localhost:9001/auth/google/callback'
+	callbackURL: process.env.GOOGLE_CB || 'http://localhost:9001/auth/google/callback'
 },
 function(accessToken, refreshToken, profile, done) {
 	userCtrl.createOrUpdate(profile).then(function(user){
@@ -65,7 +65,7 @@ app.get('/auth/google/callback',
 	passport.authenticate('google', { failureRedirect: '/login' }),
 	function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect('/'); // CONSIDER REDIRECTING SOMEWHERE ELSE AFTER LOGIN - Where they were beofre
+    res.redirect('/'); // CONSIDER REDIRECTING SOMEWHERE ELSE AFTER LOGIN - Where they were before
 });
 
 app.get('/auth/logout', function(req, res) {
