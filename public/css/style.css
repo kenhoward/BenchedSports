@@ -27,6 +27,7 @@ html, body {
 
 #commentBody {
     /*color: red;*/
+    text-align: left;
 }
 
 #commentTitle {
