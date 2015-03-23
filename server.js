@@ -5,7 +5,9 @@ var passport = require('passport')
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var session = require('express-session');
 var userCtrl = require('./api/controllers/userCtrl')
+var postCtrl = require('./api/controllers/postCtrl')
 var posts = require('./api/models/postSchema')
+
 
 var app = express();
 
@@ -45,7 +47,7 @@ app.use(passport.session());
 passport.use(new GoogleStrategy ({
 	clientID: process.env.GOOGLE_CLIENT_ID, 
 	clientSecret: process.env.GOOGLE_CLIENT_SECRET, 
-	callbackURL: process.env.GOOGLE_CB || 'http://localhost:9001/auth/google/callback'
+	callbackURL: process.env.GOOGLE_CB
 },
 // HAD THIS BEFORE, testing what jaredhandson/passport does
 function(accessToken, refreshToken, profile, done) {
@@ -111,6 +113,9 @@ app.post('/api/post', function(req, res) {
 		}
 	})
 })
+
+// app.put('/api/newBillboard', postCtrl.findOneAndUpdate);
+app.delete("/api/removePost/:id", postCtrl.remove);
 
 // CONNECTIONS ===================================================================================================
 

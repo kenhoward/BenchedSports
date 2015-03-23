@@ -7,6 +7,14 @@ app.controller('postCtrl', function($scope, postService) {
 		$location.path('/login');
 	}
 
+    $scope.removePost = function(post){
+        console.log(post);
+        postService.removePost(post)
+            .then(function(res){
+                console.log("Following post was deleted: ", res);
+                // $scope.updateBoards();
+    }
+
 	$scope.submitPost = function() {
 		var post = {};
 		post.title = $scope.title;

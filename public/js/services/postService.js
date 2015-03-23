@@ -35,4 +35,27 @@ app.service('postService', function($http, $q, $location) {
 		return deferred.promise;
 	}
 
+    this.removePost = function(post){
+        var deferred = $q.defer()
+        console.log(post);
+        $http.delete("/api/removePost/" + post.id)
+            .then(function(res){
+                console.log("Post deleted: ", res);
+                deferred.resolve(res.data);
+            })
+        return deferred.promise;
+    }
+
+    // Not Done Yet
+
+    // this.updatePost = function(billboard){
+    //     var deferred = $q.defer()
+    //     $http.put("/api/newBillboard", billboard)
+    //         .then(function(res){
+    //             console.log("Board was updated: ", res);
+    //             deferred.resolve(res.data);
+    //         })
+    //     return deferred.promise;
+    // }    	
+
 })

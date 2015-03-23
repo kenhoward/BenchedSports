@@ -55,22 +55,26 @@
 				</div>
 			</div>
 		</div>
-
-
-			<div class="view" ng-repeat='post in viewPosts'>
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-offset-1 col-sm-10">
-							<div class="well">
-								<div id='commentTitle'>{{post.title}}</div><br>
-								<div id='commentBody' ng-bind-html="post.body"></div><br> <!-- textAngular // previously was: <div id='commentBody'>{{post.body}}</div><br> -->
-								{{post.user.name}}
-								<img id='commentPics' ng-src='{{post.user.picture}}' />
+			<div ng-controller='postCtrl'>
+				<div class="view" ng-repeat='post in viewPosts'>
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-offset-1 col-sm-10">
+								<div class="well">
+									<div id='commentTitle'>{{post.title}}</div><br>
+									<div id='commentBody' ng-bind-html="post.body"></div><br> <!-- textAngular // previously was: <div id='commentBody'>{{post.body}}</div><br> -->
+									{{post.user.name}}
+									<img id='commentPics' ng-src='{{post.user.picture}}' />
+				                    <div>
+				                        <!-- <i class="fa fa-pencil"><a href="">Update</a></i> | -->
+				                        <i class="fa fa-trash-o"><a ng-click="removeBoard(post)" href="">Delete</a></i>
+				                    </div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			</div>			
 		</div>
 	</div>
 </div>
