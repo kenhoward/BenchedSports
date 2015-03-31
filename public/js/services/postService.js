@@ -44,6 +44,10 @@ app.service('postService', function($http, $q, $location) {
             .then(function(res){
                 console.log("Post deleted: ", res);
                 deferred.resolve(res.data);
+            }, function(err) {
+            	console.log(err)
+            	sweetAlert("Oops...", "Something went wrong!", "error");
+            	deferred.reject(err);
             })
         return deferred.promise;
     }
