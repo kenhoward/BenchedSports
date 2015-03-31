@@ -22,23 +22,15 @@ module.exports = {
 
     remove: function(req, res) {
         console.log(req.params.id);
-        Post.findOne({ id: req.params.id }, function(err, results) {
+        console.log('lo');
+        Post.findOneAndRemove({ _id: req.params.id }, function(err, results) {
             if (err) {
-                res.status(401).json(err);
-            }
-            if (results) {
-                Post.findOneAndRemove({ id: req.params.id }, function(err, results) {
-                    if (err) {
-                        console.log(err)
-                        res.status(401).json(err);
-                    } else {
-                        res.send(results);
-                    }
-                })
+                console.log(err)
+                res.status(500).json(err);
             } else {
-                console.log("Post does not exist");
-                //res.end(); // Not sure if this is necessary to close request if no results
+                res.send(results);
             }
         })
+        
     }
 }

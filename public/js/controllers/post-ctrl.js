@@ -13,6 +13,7 @@ app.controller('postCtrl', function($scope, postService) {
             .then(function(res){
                 console.log("Following post was deleted: ", res);
                 // $scope.updateBoards();
+            })
     }
 
 	$scope.submitPost = function() {

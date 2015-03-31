@@ -27,9 +27,11 @@ app.service('postService', function($http, $q, $location) {
 			data: data
 		}).then(function(res) {
 			console.log(res);
+			swal("Success!", "You have successfully posted!", "success")
 			deferred.resolve(res)
 		}, function(err) {
 			console.log(err)
+			sweetAlert("Oops...", "Something went wrong! Your post is missing something", "error");
 			deferred.reject(err);
 		})
 		return deferred.promise;
@@ -38,7 +40,7 @@ app.service('postService', function($http, $q, $location) {
     this.removePost = function(post){
         var deferred = $q.defer()
         console.log(post);
-        $http.delete("/api/removePost/" + post.id)
+        $http.delete("/api/removePost/" + post._id)
             .then(function(res){
                 console.log("Post deleted: ", res);
                 deferred.resolve(res.data);
