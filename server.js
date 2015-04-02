@@ -49,7 +49,7 @@ passport.use(new GoogleStrategy ({
 	clientSecret: process.env.GOOGLE_CLIENT_SECRET, 
 	callbackURL: process.env.GOOGLE_CB
 },
-// HAD THIS BEFORE, testing what jaredhandson/passport does
+
 function(accessToken, refreshToken, profile, done) {
 	userCtrl.createOrUpdate(profile).then(function(user){
 		// console.log(user);
