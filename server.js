@@ -40,16 +40,16 @@ passport.deserializeUser(function(obj, done){
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
-app.use(session({ secret: process.env.SECRET })); // need to add to bash profile
+app.use(session({ secret: process.env.SECRET || 'adkfjlksjf3847#lkjdfksfKLJDFK' })); // need to add to bash profile
 app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use(new GoogleStrategy ({
-	clientID: process.env.GOOGLE_CLIENT_ID, 
-	clientSecret: process.env.GOOGLE_CLIENT_SECRET, 
-	callbackURL: process.env.GOOGLE_CB
+	clientID: process.env.GOOGLE_CLIENT_ID || '782472847243-p7agurs9qfnl61h48avu7gossqren1kp.apps.googleusercontent.com', 
+	clientSecret: process.env.GOOGLE_CLIENT_SECRET || 'Ma2AM6ziPJBwhRvBLjK9rTnK', 
+	callbackURL: process.env.GOOGLE_CB || 'http://localhost:9001/auth/google/callback'
 },
-
+// HAD THIS BEFORE, testing what jaredhandson/passport does
 function(accessToken, refreshToken, profile, done) {
 	userCtrl.createOrUpdate(profile).then(function(user){
 		// console.log(user);
