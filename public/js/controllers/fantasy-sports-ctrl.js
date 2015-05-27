@@ -1,8 +1,10 @@
+// PENDING API APPROVAL
+
 // var app = angular.module('benchedSports');
 
 // app.controller('fantasySports', function($scope) {
 // 	switch($routeParams.sport) {
-// 		case 'NFL': 
+// 		case 'NFL':
 // 			$scope.title = 'NFL Home'
 // 			break;
 // 		case 'MLB':
