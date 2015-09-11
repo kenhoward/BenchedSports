@@ -7,7 +7,7 @@
 		<div class="notification">
 			<p id='notification' ng-show='!user'>Login to write your post!</p>
 			<!-- Good use of modal below -->
-			<a href='#/{{sport}}'><button class='btn btn-primary btn-md' data-toggle='modal' data-target='#loginModal' ng-show='!user' ng-click='toLogin()'>Click to Login</button></a>
+			<a ng-href='#/{{sport}}'><button class='btn btn-primary btn-md' data-toggle='modal' data-target='#loginModal' ng-show='!user' ng-click='toLogin()'>Click to Login</button></a>
 		</div>
 
 		<button class='btn btn-primary btn-md' data-toggle='modal' data-target='#myModal' ng-show='user'>Create Your Post</button> <!-- ***changes*** -->
